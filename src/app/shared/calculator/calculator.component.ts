@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-calculator',
+  selector: 'shared-calculator',
   templateUrl: './calculator.component.html',
   styleUrls: ['./calculator.component.css']
 })

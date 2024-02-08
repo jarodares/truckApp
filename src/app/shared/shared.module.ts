@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CalendarComponent } from './calendar/calendar.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -13,8 +14,13 @@ import { NavbarComponent } from './navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
-  exports: []
+  exports: [
+    CalendarComponent,
+    CalculatorComponent,
+    NavbarComponent
+  ]
 })
 export class SharedModule { }

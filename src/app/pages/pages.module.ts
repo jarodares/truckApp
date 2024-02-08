@@ -4,6 +4,7 @@ import { CalendarPageComponent } from './calendar-page/calendar-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { CalculatorPageComponent } from './calculator-page/calculator-page.component';
 import { PagesRoutingModule } from './pages.routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -15,7 +16,8 @@ import { PagesRoutingModule } from './pages.routing.module';
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    SharedModule
   ]
 })
 export class PagesModule { }

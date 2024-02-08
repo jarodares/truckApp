@@ -1,0 +1,12 @@
+a {
+  cursor:pointer;
+  
+}
+
+a:hover {
+  color:rgb(148, 13, 1);
+}
+
+.active-link{
+  font-weight: bold;
+}
