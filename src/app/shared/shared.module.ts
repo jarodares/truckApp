@@ -4,6 +4,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports: [
     CalendarComponent,

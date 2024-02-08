@@ -1,1 +1,81 @@
-<p>calendar works!</p>
+<div class="container btn-group" role="group">
+  <button type="button" class="btn btn-outline-secondary" (click)="decreaseDays()"><</button>
+  <button type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#resetMenu" class="btn btn-outline-secondary">Year {{ getYear() }}</button>
+  <button type="button" class="btn btn-outline-secondary" (click)="increaseDays()">></button>
+</div>
+
+<div class="collapse" id="resetMenu">
+  <div class="container btn-group mt-1">
+    <button class="btn btn-outline-danger me-1" type="button" (click)="resetMultiplier()">Reset</button>
+    <select name="monthChange" class="form-select" [(ngModel)]="selectedValue" (ngmodelChange)="rePop()">
+      <option 
+      *ngFor="let month of months; let i = index"
+      [ngValue]="i"
+      [attr.selected]="i === selectedValue? true:null"
+      >{{ month }}</option>
+    </select>
+
+    <div class="m-1 px-3">
+      <div class="form-check form-check-inline">
+        <input 
+        class="form-check-input"
+        name="flexRadioDefault"
+        type="radio"
+        id="flexRadioDefault1"
+        [(ngModel)]="daysL"
+        value="7" (ngModelChange)="rePop()">
+        <label for="flexRadioDefault" class="form-check-label">7 Days</label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input type="radio"
+        class="form-check-input"
+        name="flexRadioDefault"
+        id="flexRadioDefault2"
+        [(ngModel)]="daysL"
+        value="14" (ngModelChange)="rePop()">
+        <label for="flexRadioDefault2" class="form-check-label">14 Days</label>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<table class="table table-borderless">
+  <thead>
+    <tr>
+      <ng-container *ngFor="let month of months; let i = index">
+        <th *ngIf="i < 6">
+          {{month}}
+        </th>
+      </ng-container>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <ng-container *ngFor="let day of days; let i = index">
+        <td *ngIf="i < 6">
+          {{ day }}
+        </td>
+      </ng-container>
+    </tr>
+  </tbody>
+  <thead>
+    <tr>
+      <ng-container *ngFor="let month of months; let i = index">
+      <th *ngIf="i >= 6">
+        {{ month }}
+      </th>
+      </ng-container>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <ng-container *ngFor="let day of days; let i = index">
+        <td *ngIf="i >= 6">
+          {{ day }}
+        </td>
+      </ng-container>
+    </tr>
+  </tbody>
+</table>
